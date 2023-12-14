@@ -1,7 +1,6 @@
 require_relative '../solver'
 
 RSpec.describe Solver do
-
   describe '#factorial' do
     it 'Displays error if the input number is negative' do
       solver = Solver.new
@@ -32,4 +31,24 @@ RSpec.describe Solver do
       expect(result).to eq(479001600)
     end
   end
+
+  describe '#reverse' do
+  it 'Correctly reverse a string' do
+    solver = Solver.new
+    result = solver.reverse('hello')
+    expect(result).to eq('olleh')
+  end
+
+  it 'Correctly reverse a sentence with spaces' do
+    solver = Solver.new
+    result = solver.reverse('A little boy is coding.')
+    expect(result).to eq('.gnidoc si yob elttil A')
+  end
+
+  it 'Correctly reverse a sentence with symbols' do
+    solver = Solver.new
+    result = solver.reverse('My password is Su**per/Secret/*')
+    expect(result).to eq('*/terceS/rep**uS si drowssap yM')
+  end
+end
 end
