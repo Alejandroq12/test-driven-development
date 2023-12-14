@@ -33,22 +33,49 @@ RSpec.describe Solver do
   end
 
   describe '#reverse' do
-  it 'Correctly reverse a string' do
-    solver = Solver.new
-    result = solver.reverse('hello')
-    expect(result).to eq('olleh')
+    it 'Correctly reverse a string' do
+      solver = Solver.new
+      result = solver.reverse('hello')
+      expect(result).to eq('olleh')
+    end
+
+    it 'Correctly reverse a sentence with spaces' do
+      solver = Solver.new
+      result = solver.reverse('A little boy is coding.')
+      expect(result).to eq('.gnidoc si yob elttil A')
+    end
+
+    it 'Correctly reverse a sentence with symbols' do
+      solver = Solver.new
+      result = solver.reverse('My password is Su**per/Secret/*')
+      expect(result).to eq('*/terceS/rep**uS si drowssap yM')
+    end
   end
 
-  it 'Correctly reverse a sentence with spaces' do
-    solver = Solver.new
-    result = solver.reverse('A little boy is coding.')
-    expect(result).to eq('.gnidoc si yob elttil A')
-  end
+  describe '#fizzbuzz' do
+    it 'displays fizz when n is only divisible by 3' do
+      solver = Solver.new
+      result = solver.fizzbuzz(12)
+      expect(result).to eq('fizz')
+    end
 
-  it 'Correctly reverse a sentence with symbols' do
-    solver = Solver.new
-    result = solver.reverse('My password is Su**per/Secret/*')
-    expect(result).to eq('*/terceS/rep**uS si drowssap yM')
+    it 'displays buzz when n is only divisible by 5' do
+      solver = Solver.new
+      result = solver.fizzbuzz(20)
+      expect(result).to eq('buzz')
+    end
+
+    it 'displays fizzbuzz when n is divisible by both 3 and 5' do
+      solver = Solver.new
+      result = solver.fizzbuzz(45)
+      expect(result).to eq('fizzbuzz')
+    end
+
+    it 'displays string of n when n is not divisible by 3 nor by 5' do
+      solver = Solver.new
+      result = solver.fizzbuzz(8)
+      expect(result).to eq('8')
+    end
   end
 end
-end
+
