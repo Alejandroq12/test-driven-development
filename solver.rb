@@ -1,21 +1,21 @@
 class Solver
-  def factorial(n)
-    raise ArgumentError, 'Input number must be non-negative.' if n.negative?
-    return 1 if n.zero?
+  def factorial(number)
+    raise ArgumentError, 'Input number must be non-negative.' if number.negative?
+    return 1 if number.zero?
 
     # recursive approach
-    n * factorial(n - 1)
+    number * factorial(number - 1)
   end
 
   def reverse(word)
     word.reverse
   end
 
-  def fizzbuzz(n)
-    return 'fizzbuzz' if (n % 3).zero? && (n % 5).zero?
-    return 'fizz' if (n % 3).zero?
-    return 'buzz' if (n % 5).zero?
+  def fizzbuzz(number)
+    return 'fizzbuzz' if (number % 3).zero? && (number % 5).zero?
+    return 'fizz' if (number % 3).zero?
+    return 'buzz' if (number % 5).zero?
 
-    n.to_s
+    number.to_s
   end
 end
