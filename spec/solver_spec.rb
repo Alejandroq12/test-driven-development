@@ -51,4 +51,30 @@ RSpec.describe Solver do
       expect(result).to eq('*/terceS/rep**uS si drowssap yM')
     end
   end
+
+  describe '#fizzbuzz' do
+    it 'displays fizz when n is only divisible by 3' do
+      solver = Solver.new
+      result = solver.fizzbuzz(12)
+      expect(result).to eq('fizz')
+    end
+
+    it 'displays buzz when n is only divisible by 5' do
+      solver = Solver.new
+      result = solver.fizzbuzz(20)
+      expect(result).to eq('buzz')
+    end
+
+    it 'displays fizzbuzz when n is divisible by both 3 and 5' do
+      solver = Solver.new
+      result = solver.fizzbuzz(45)
+      expect(result).to eq('fizzbuzz')
+    end
+
+    it 'displays string of n when n is not divisible by 3 nor by 5' do
+      solver = Solver.new
+      result = solver.fizzbuzz(8)
+      expect(result).to eq('8')
+    end
+  end
 end
